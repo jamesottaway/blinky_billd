@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'yaml'
 require 'blinky_monitor/monitor'
 require 'blinky'
