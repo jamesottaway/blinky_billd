@@ -11,6 +11,8 @@ EOF
   spec.homepage = 'http://github.com/jamesottaway/blinky_monitor'
   spec.files = Dir['lib/**/*'] + Dir['spec/**/*'] + Dir['bin/*'] + ['README.rdoc', 'MIT-LICENSE', 'Rakefile']
   spec.executables << 'blink'
+  
+  spec.add_dependency 'blinky', '~>0'
 
   spec.add_development_dependency 'rake', '~>0.8'
   spec.add_development_dependency 'rspec', '~>2'
