@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{blinky_monitor}
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{James Ottaway}, %q{Mark Ryall}]
@@ -14,25 +14,37 @@ Gem::Specification.new do |s|
   s.email = %q{james@ottaway.mp}
   s.executables = [%q{blink}]
   s.extra_rdoc_files = [
-    "README.rdoc"
+    "README.markdown"
   ]
   s.files = [
     ".rvmrc",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "MIT-LICENSE",
-    "README.rdoc",
+    "README.markdown",
     "Rakefile",
     "VERSION",
     "bin/blink",
+    "blinky_monitor.gemspec",
     "lib/blinky_monitor.rb",
+    "lib/blinky_monitor/cruise_control_server.rb",
     "lib/blinky_monitor/jenkins_server.rb",
     "lib/blinky_monitor/monitor.rb",
-    "spec/blinky.rb",
+    "spec/blinky_monitor/cruise_control_server_spec.rb",
     "spec/blinky_monitor/jenkins_server_spec.rb",
     "spec/blinky_monitor/monitor_spec.rb",
     "spec/blinky_monitor_spec.rb",
-    "spec/rspec_helper.rb"
+    "spec/fixtures/cruise_control_building_after_failure.xml",
+    "spec/fixtures/cruise_control_building_after_success.xml",
+    "spec/fixtures/cruise_control_failure.xml",
+    "spec/fixtures/cruise_control_success.xml",
+    "spec/fixtures/cruise_control_success_and_failure.xml",
+    "spec/fixtures/jenkins_failure.xml",
+    "spec/fixtures/jenkins_success.xml",
+    "spec/spec_helper.rb",
+    "spec/support/blinky.rb",
+    "spec/support/hipster_server.rb"
   ]
   s.homepage = %q{http://github.com/jamesottaway/blinky_monitor}
   s.licenses = [%q{MIT}]
