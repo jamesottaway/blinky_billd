@@ -1,4 +1,4 @@
-require File.dirname(__FILE__)+'/../rspec_helper'
+require 'spec_helper'
 require 'blinky_monitor/cruise_control_server'
 
 describe BlinkyMonitor::CruiseControlServer do
