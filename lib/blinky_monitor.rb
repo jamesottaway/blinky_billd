@@ -7,9 +7,10 @@ require 'blinky_monitor/jenkins_server'
 module BlinkyMonitor
   def self.run file
     config = YAML.load_file file
-    jenkins = JenkinsServer.new config[:url]
+    server_class = BlinkyMonitor.const_get "#{config[:server].split('_').map(&:capitalize).join}Server"
+    server = server_class.new config[:url]
     blinky = Blinky.new
     
-    Monitor.new(jenkins, blinky).run
+    Monitor.new(server, blinky).run
   end
 end

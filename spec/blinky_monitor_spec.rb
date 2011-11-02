@@ -2,7 +2,8 @@ require File.dirname(__FILE__)+'/rspec_helper'
 require 'blinky_monitor'
 
 describe BlinkyMonitor do
-  JENKINS_URL = 'jenkins url goes here'
+  CI_TYPE = 'hipster' # you've probably never heard of it...
+  CI_URL = 'http://ci/'
   
   before do
     @file = stub 'file'
@@ -12,11 +13,12 @@ describe BlinkyMonitor do
   end
   
   it 'should load configuration from a YAML file' do
-    hash = {:url => JENKINS_URL}
+    hash = {:server => CI_TYPE, :url => CI_URL}
     YAML.should_receive(:load_file).with(@file).and_return(hash)
-    BlinkyMonitor::JenkinsServer.should_receive(:new).with(JENKINS_URL).and_return(@jenkins)
+    BlinkyMonitor.should_receive(:const_get).with('HipsterServer').and_return BlinkyMonitor::HipsterServer
+    BlinkyMonitor::HipsterServer.should_receive(:new).with(CI_URL).and_return(@server)
     Blinky.should_receive(:new).and_return(@blinky)
-    BlinkyMonitor::Monitor.should_receive(:new).with(@jenkins, @blinky).and_return(@monitor)
+    BlinkyMonitor::Monitor.should_receive(:new).with(@server, @blinky).and_return(@monitor)
     @monitor.should_receive :run
     BlinkyMonitor.run @file
   end
