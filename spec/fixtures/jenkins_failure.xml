@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>All last builds only</title>
+	<link type="text/html" href="http://localhost:8080/" rel="alternate"/>
+	<updated>2011-02-23T00:08:34Z</updated>
+	<author>
+		<name>Jenkins Server</name>
+	</author>
+	<id>urn:uuid:903deee0-7bfa-11db-9fe1-0800200c9a66</id>
+	<entry>
+		<title>cas #87 (broken since build #1)</title>
+		<link type="text/html" href="http://localhost:8080/job/cas/87/" rel="alternate"/>
+		<id>tag:hudson.dev.java.net,2008:http://localhost:8080/job/cas/</id>
+		<published>2011-02-23T00:08:34Z</published>
+		<updated>2011-02-23T00:08:34Z</updated>
+	</entry>
+</feed>
