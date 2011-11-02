@@ -12,8 +12,8 @@ describe BlinkyMonitor::CruiseControlServer do
 <Project webUrl="http://build/job/green/" name="green" lastBuildLabel="1" lastBuildTime="2011-12-30T12:00:00Z" lastBuildStatus="Success" activity="Sleeping"/>
 </Projects>
 EOF
-    
-    @server.should_receive(:open).with('build/cc.xml').and_return(response)
+    stream = stub 'stream', :read => response
+    @server.should_receive(:open).with('build/cc.xml').and_return(stream)
     @server.status.should == :success
   end
   
@@ -24,7 +24,8 @@ EOF
 </Projects>
 EOF
     
-    @server.should_receive(:open).with('build/cc.xml').and_return(response)
+    stream = stub 'stream', :read => response
+    @server.should_receive(:open).with('build/cc.xml').and_return(stream)
     @server.status.should == :failure
   end
 
@@ -36,7 +37,8 @@ EOF
 </Projects>
 EOF
     
-    @server.should_receive(:open).with('build/cc.xml').and_return(response)
+    stream = stub 'stream', :read => response
+    @server.should_receive(:open).with('build/cc.xml').and_return(stream)
     @server.status.should == :failure
   end
 
@@ -47,7 +49,8 @@ EOF
 </Projects>
 EOF
     
-    @server.should_receive(:open).with('build/cc.xml').and_return(response)
+    stream = stub 'stream', :read => response
+    @server.should_receive(:open).with('build/cc.xml').and_return(stream)
     @server.status.should == :building
   end
 
@@ -58,7 +61,8 @@ EOF
 </Projects>
 EOF
     
-    @server.should_receive(:open).with('build/cc.xml').and_return(response)
+    stream = stub 'stream', :read => response
+    @server.should_receive(:open).with('build/cc.xml').and_return(stream)
     @server.status.should == :building
   end
 end

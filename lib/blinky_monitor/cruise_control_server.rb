@@ -7,7 +7,7 @@ module BlinkyMonitor
     end
     
     def status
-      xml = open("#{@url}/cc.xml")
+      xml = open("#{@url}/cc.xml").read
       status = :success if xml.include? 'lastBuildStatus="Success"'
       status = :failure if xml.include? 'lastBuildStatus="Failure"'
       status = :building if xml.include? 'activity="Building"'
