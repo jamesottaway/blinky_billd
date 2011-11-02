@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'blinky', '~> 0'
+
 group :development do
   gem 'bundler', '~> 1.0.0'
   gem 'rake', '~> 0.8'
