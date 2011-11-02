@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'blinky_monitor'
+require 'hipster_server'
 
 describe BlinkyMonitor do
   CI_TYPE = 'hipster' # you've probably never heard of it...
