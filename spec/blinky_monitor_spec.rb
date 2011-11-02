@@ -14,7 +14,7 @@ describe BlinkyMonitor do
   end
   
   it 'should load configuration from a YAML file' do
-    hash = {:server => CI_TYPE, :url => CI_URL}
+    hash = {'server' => CI_TYPE, 'url' => CI_URL}
     YAML.should_receive(:load_file).with(@file).and_return(hash)
     BlinkyMonitor.should_receive(:const_get).with('HipsterServer').and_return BlinkyMonitor::HipsterServer
     BlinkyMonitor::HipsterServer.should_receive(:new).with(CI_URL).and_return(@server)
