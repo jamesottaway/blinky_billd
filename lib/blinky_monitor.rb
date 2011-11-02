@@ -1,8 +1,8 @@
 require 'rubygems'
 require 'yaml'
-require 'blinky_monitor/monitor'
 require 'blinky'
-require 'blinky_monitor/jenkins_server'
+
+Dir.glob(File.dirname(__FILE__)+'/blinky_monitor/**/*').each {|f| require f}
 
 module BlinkyMonitor
   def self.run file
