@@ -6,7 +6,7 @@ module BlinkyMonitor
     end
     
     def run
-      @blinky.send "#{@ci_server.status}!"
+      @blinky.light.send "#{@ci_server.status}!"
     end
   end
 end
