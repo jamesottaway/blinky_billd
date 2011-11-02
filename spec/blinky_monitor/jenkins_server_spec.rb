@@ -26,8 +26,9 @@ describe BlinkyMonitor::JenkinsServer do
     	</entry>
     </feed>
 EOF
-    
-    @jenkins.should_receive(:open).with('http://10.7.13.12:8090/rssLatest').and_return(response)
+
+    stream = stub 'stream', :read => response
+    @jenkins.should_receive(:open).with('http://10.7.13.12:8090/rssLatest').and_return(stream)
     @jenkins.status.should == :success
   end
   
@@ -51,8 +52,8 @@ EOF
     	</entry>
     </feed>
 EOF
-    
-    @jenkins.should_receive(:open).with('http://10.7.13.12:8090/rssLatest').and_return(response)
+    stream = stub 'stream', :read => response
+    @jenkins.should_receive(:open).with('http://10.7.13.12:8090/rssLatest').and_return(stream)
     @jenkins.status.should == :failure
   end
 end

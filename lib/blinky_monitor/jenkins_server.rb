@@ -7,7 +7,7 @@ module BlinkyMonitor
     end
     
     def status
-      open("#{@url}/rssLatest").include?('(broken') ? :failure : :success
+      open("#{@url}/rssLatest").read.include?('(broken') ? :failure : :success
     end
   end
 end
