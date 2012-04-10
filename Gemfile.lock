@@ -2,11 +2,19 @@ PATH
   remote: .
   specs:
     blinky_billd (0.0.1)
+      billd
+      blinky
 
 GEM
   remote: http://rubygems.org/
   specs:
+    billd (0.0.1)
+      nokogiri
+    blinky (0.0.3)
+      ruby-usb (>= 0.2.1)
+    nokogiri (1.5.2)
     rake (0.9.2.2)
+    ruby-usb (0.2.1)
 
 PLATFORMS
   ruby
