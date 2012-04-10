@@ -8,8 +8,9 @@ Gem::Specification.new do |s|
   s.authors     = ["James Ottaway"]
   s.email       = ["james@ottaway.mp"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Blinky + Billd}
+  s.description = %q{Blinky is great for controlling a build light, and Billd can tell you how healthy your builds are.
+    Wouldn't it be nice if they placed nicely together? Well now they do!}
 
   s.rubyforge_project = "blinky_billd"
 
