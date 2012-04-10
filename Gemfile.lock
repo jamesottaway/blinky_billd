@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    blinky_billd (0.0.2)
+    blinky_billd (0.0.3)
       billd
       blinky
 
