@@ -8,7 +8,7 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    billd (0.0.2)
+    billd (0.0.3)
       nokogiri
     blinky (0.0.3)
       ruby-usb (>= 0.2.1)
